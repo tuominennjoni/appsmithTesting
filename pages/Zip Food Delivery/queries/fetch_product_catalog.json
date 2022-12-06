@@ -2,7 +2,7 @@
   "pluginType": "SAAS",
   "pluginId": "google-sheets-plugin",
   "unpublishedAction": {
-    "name": "fetch_product",
+    "name": "fetch_product_catalog",
     "datasource": {
       "name": "order_database",
       "pluginId": "google-sheets-plugin",
@@ -42,7 +42,7 @@
           "data": ""
         },
         "sheetName": {
-          "data": "Products"
+          "data": "Product Catalog"
         },
         "sheetUrl": {
           "data": "https://docs.google.com/spreadsheets/d/1jvpbw1dzb42O4mTpoDqyp37dfwF-tYldxkBZxaaABfk/edit"
@@ -66,9 +66,7 @@
             "condition": "AND",
             "children": [
               {
-                "condition": "EQ",
-                "key": "Order_Id",
-                "value": "{{order_table.selectedRow.Order_id}}"
+                "condition": "LT"
               }
             ]
           }
@@ -76,23 +74,17 @@
       }
     },
     "executeOnLoad": true,
-    "dynamicBindingPathList": [
-      {
-        "key": "formData.where.data.children[0].value"
-      }
-    ],
+    "dynamicBindingPathList": [],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [
-      "order_table.selectedRow.Order_id"
-    ],
+    "jsonPathKeys": [],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Zip Food Delivery_fetch_product",
+  "id": "Zip Food Delivery_fetch_product_catalog",
   "deleted": false,
-  "gitSyncId": "638f6ee456b9507e2bf89ead_638f88d80a31d408f5bf99d6"
+  "gitSyncId": "638f6ee456b9507e2bf89ead_638fb6adc7ce037287fce762"
 }
